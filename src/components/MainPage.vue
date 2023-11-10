@@ -3,7 +3,7 @@
     <div class="user-info-header">
       <div class="user-info-header">
         <router-link to="/">
-          <img src="src/assets/logout.svg" @click="logoutUser" style="cursor: pointer;">
+          <VLabel @click="logoutUser" label="Выйти" type="user"/>
         </router-link> 
       </div>
       <div class="user-info-header-group">
@@ -25,7 +25,7 @@
     <div class="user-info-header">
       <div class="user-info-header">
         <router-link to="/">
-          <img src="src/assets/logout.svg" @click="logoutUser" style="cursor: pointer;">
+          <VLabel @click="logoutUser" label="Выйти" type="user"/>
         </router-link> 
       </div>
     </div>

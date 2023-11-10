@@ -7,7 +7,7 @@
       />
     </div>
   <form @submit.prevent="submitForm" class="login-form">
-    <img src="../assets/logo.png" style="max-width: 300px;">
+    <!-- <img src="../assets/logo.png" style="max-width: 300px;"> -->
     <div class="base-container">
       <VLabel 
         id="label-pass"

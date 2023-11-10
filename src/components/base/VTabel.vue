@@ -14,10 +14,7 @@
       <tbody>
         <tr v-for="item in displayedItems" :key="item.key" :class="item.state ? 'table-cell-ready' : 'table-cell'">
           <td v-for="header in headers" :key="header.key" >
-            <div v-if="header.key === 'delete'">
-              <img  src="src/assets/delete.svg" @click="del(item)">
-            </div>
-            <div v-else @click="openRow(item)">
+            <div @click="openRow(item)">
               {{ item[header.key] }}
             </div>
           </td>

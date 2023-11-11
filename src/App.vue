@@ -59,6 +59,8 @@ const sendLogout = () => {
   login.value = true
   errorShow.value = false
   localStorage.setItem('authenticated', '')
+  localStorage.setItem('Data', '')
+  localStorage.setItem('time', '')
   localStorage.setItem('role', '')
   localStorage.setItem('map', '')
 }

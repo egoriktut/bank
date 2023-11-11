@@ -222,7 +222,7 @@ ymaps.ready(init).then( () => {
 
 }
 
-points = [localStorage.getItem('firstPoint'), localStorage.getItem('secondPoint')];
+const points = [localStorage.getItem('firstPoint'), localStorage.getItem('secondPoint')];
 console.log(points)
 if (points[0] && points[1] && localStorage.getItem('role') === 'MANAGER'){
     start(points);

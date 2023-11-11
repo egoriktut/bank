@@ -74,7 +74,7 @@ const emits = defineEmits(['logout']);
 async function reloadState() {
   await axios({
     method: 'put',
-    url: `${urlApi}/manage/doomsday`,
+    url: `${urlApi}/manage/doomsday2`,
     headers: {
       Authorization: localStorage.getItem('authenticated')
     }, 
@@ -123,9 +123,8 @@ async function startBroot() {
     }).catch((error) => {
       console.log(error)
     });
-    localStorage.removeItem('Data');
   }
-
+  // localStorage.removeItem('Data');
   window.location.reload();
 };
 

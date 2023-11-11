@@ -1,5 +1,3 @@
-// export default start
-
 function start(points){
     ymaps.modules.define('MultiRouteCustomView', [
         'util.defineClass'

@@ -1,4 +1,5 @@
 <template>
+  <!-- Может потребоваться для маштабирования -->
   <div class="modal-mask">
     <div class="modal-wrapper">
       <div class="modal-container">

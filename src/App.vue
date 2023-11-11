@@ -3,7 +3,7 @@
     <Login @onSubmitForm="sendLogin" :info="errorShow" />
   </div>
   <div class="center-content-user" v-else>
-    <MainPage :user="user" :userName="username" @logout="sendLogout" />
+    <MainPage :user="user" @logout="sendLogout" />
   </div>
   <router-view></router-view>
 </template>
@@ -16,7 +16,6 @@ import axios from 'axios';
 
 const login = ref(true)
 const errorShow = ref(false)
-const username = ref('')
 const user = ref('')
 const urlApi = 'http://185.171.194.122:8088'
 
@@ -32,7 +31,7 @@ onBeforeMount(() => {
   if (role === 'MANAGER') {
     user.value = 'MANAGER'
   }
-  username.value = localStorage.getItem('name')
+  localStorage.setItem('role', role)
 })
 
 async function sendLogin(onUsername, onPassword) {
@@ -50,7 +49,6 @@ async function sendLogin(onUsername, onPassword) {
     localStorage.setItem('authenticated', response.data.token)
     localStorage.setItem('role', response.data.user.role)
     localStorage.setItem('name', response.data.user.name)
-    username.value = response.data.user.name
     user.value = response.data.user.role
   }).catch(() => {
     errorShow.value = true

@@ -7,7 +7,6 @@
       />
     </div>
   <form @submit.prevent="submitForm" class="login-form">
-    <!-- <img src="../assets/logo.png" style="max-width: 300px;"> -->
     <div class="base-container">
       <VLabel 
         id="label-pass"
@@ -71,12 +70,12 @@ const submitForm = () => {
   border: 1px solid #3f3939;
   border-radius: 4px;
   background-color: #3b3535;
-  text-align: center; /* Центрировать содержимое формы по горизонтали */
+  text-align: center;
 }
 .login-error {
   min-width: 350px;
   margin: 0 auto;
-  text-align: center; /* Центрировать содержимое формы по горизонтали */
+  text-align: center;
 }
 
 .base-container{

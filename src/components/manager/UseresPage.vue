@@ -25,7 +25,6 @@ const openRow = (row) => {
 
 const searchInput = ref('')
 
-// Падает с бэка
 const data = ref([])
 
 axios({

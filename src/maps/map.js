@@ -1,6 +1,3 @@
-var a = "";
-var b = "";
-
 export default start;
 
 export function start(a, b){
@@ -36,4 +33,3 @@ export function start(a, b){
     ymaps.ready(init);
 }
 
-// start(a, b)

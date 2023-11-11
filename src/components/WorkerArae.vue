@@ -5,7 +5,7 @@
   </div>
   <VTabel v-bind="tableData" @sort="sortTable" @open="openRow"/>
   <div v-if="showMap">
-    <div  id="map" style="height: 100%; width: 100%;"></div>
+    <div id="map" style="height: 100%; width: 100%;"></div>
     <VLabel @click="compleateTask" label="Завершить задачу" type="user"/>
   </div>
   
@@ -24,8 +24,6 @@ const urlApi = 'http://185.171.194.122:8088'
 const userAddress = ref('')
 const searchInput = ref('');  
 
-
-// Падает с бэка 
 const data = ref([]);
 const showMap = ref(true);
 
@@ -54,11 +52,10 @@ axios({
     if (data.value[0].status === 'COMPLETED'){
       showMap.value = false
     }
-    
     start(userAddress.value, data.value[0].address)
     data.value.forEach((item) => {
       if (item.status === 'IN_PROGRESS') {
-        item.status = 'В прогрессе'
+        item.status = 'В процессе'
       } else if (item.status === 'CREATED') {
         item.status = 'В ожидании'
       } else {

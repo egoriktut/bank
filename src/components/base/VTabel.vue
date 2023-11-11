@@ -94,9 +94,9 @@ const sortData = (column) => {
   emits('sort', column);
 };
 
-const del = (row) => {
-  emits('delete', row)
-}
+// const del = (row) => {
+//   emits('delete', row)
+// }
 
 const openRow = (row) => {
   emits('open', row)

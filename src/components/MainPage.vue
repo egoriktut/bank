@@ -74,7 +74,7 @@ const emits = defineEmits(['logout']);
 async function reloadState() {
   await axios({
     method: 'put',
-    url: `${urlApi}/manage/doomsday2`,
+    url: `${urlApi}/manage/doomsday`,
     headers: {
       Authorization: localStorage.getItem('authenticated')
     }, 
@@ -124,12 +124,18 @@ async function startBroot() {
       console.log(error)
     });
   }
-  // localStorage.removeItem('Data');
   window.location.reload();
 };
 
 const storedData = localStorage.getItem('Data');
-const data = JSON.parse(storedData);
+const data = ref();
+try{
+  data.value = JSON.parse(storedData)
+}catch(e){
+  console.log('empty')
+}
+console.log('data')
+console.log(data.value)
 const dataNow = ref(parseInt(localStorage.getItem('dataNow')));
 
 const showLoad = ref(false)
@@ -141,9 +147,7 @@ async function fillCache() {
       headers: {
         Authorization: localStorage.getItem('authenticated')
       }, 
-      data: {
-        data
-      }
+      data: {data: data.value}
     }).then((response) => {
       console.log(response)
     }).catch((error) => {
@@ -166,8 +170,13 @@ async function fillCache() {
 };
 
 
-if (data){
-  showLoad.value = (dataNow.value === data.length && data[data.length - 1].minutes !== 0 && data[data.length - 1].minutes !== null)
+
+if (data.value){
+  console.log(dataNow.value)
+  console.log(data.value.length)
+  showLoad.value = (
+    dataNow.value === data.value.length
+  )
   if (showLoad.value){
     fillCache()
   }

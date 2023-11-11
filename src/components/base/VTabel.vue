@@ -207,10 +207,10 @@ const openRow = (row) => {
 }
 
 .sorted-asc:after {
-  content: ' ↑';
+  content: '(top)';
 }
 
 .sorted-desc:after {
-  content: ' ↓';
+  content: '(bot)';
 }
 </style>

@@ -155,7 +155,7 @@ function init() {
     myMap.geoObjects.add(multiRoute);
 
 
-    routeTypeSelector = new ymaps.control.ListBox({
+    var routeTypeSelector = new ymaps.control.ListBox({
         data: {
             content: 'Как добраться'
         },

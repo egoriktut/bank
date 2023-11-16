@@ -81,6 +81,10 @@ const headers = [
     key: 'deliveredCardsNumber',
     sortDirection: 'asc',
   },
+  {
+    label: '',
+    key: 'del',
+  },
 ]
   
   const tableData = ref({

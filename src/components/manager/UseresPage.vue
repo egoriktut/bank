@@ -70,6 +70,10 @@ const headers = [
     key: 'plannedTasks',
     sortDirection: 'asc'
   },
+  {
+    label: '',
+    key: 'del',
+  },
 ]
 
 const tableData = ref({

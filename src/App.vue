@@ -2,7 +2,8 @@
   <div class="center-content-login" v-if="login">
     <Login @onSubmitForm="sendLogin" :info="errorShow" />
   </div>
-  <div class="center-content-user" v-else>
+
+  <div v-else>
     <MainPage :user="user" @logout="sendLogout" />
   </div>
   <router-view></router-view>

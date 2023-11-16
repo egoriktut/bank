@@ -36,18 +36,18 @@ const props = defineProps({
   margin-bottom: 5px;    
   font-weight: bold;
   font-size: 14px;
-  color: #969191;
+  color: #fffefe;
   text-align: center;
 }
 
 .warning-label {
   font-weight: bold;
   font-size: 14px;
-  color: #969191;
+  color: #f53636;
   text-align: center;
-  background-color: #523e3e; 
+  background-color: #cac7c7; 
   padding: 10px; 
-  border: 1px solid #413232; 
+  border: 1px solid #d88484; 
   border-radius: 4px; 
 }
 
@@ -56,31 +56,46 @@ const props = defineProps({
   margin-bottom: 5px;    
   font-weight: bold;
   font-size: 14px;
-  color: #523e3e;
+  color: #696969;
   text-align: center;
-  background-color: #969191; 
-  border: 1px solid #969191;
+  background-color: #e2e6e7; 
+  /* border: 1px solid #696969; */
   padding: 8px;
   border-radius: 4px;
   transition: background-color 0.5s ease;
 }
 
-.user-label-active {
+.user-label:hover {
+  background-color: #bfdce4;
+  /* border-color: #bfdce4; */
+  cursor: pointer;
+}
+
+.menu-label {
   display: block;
   margin-bottom: 5px;    
   font-weight: bold;
-  font-size: 14px;
-  color: #523e3e;
+  font-size: 20px;
+  color: #fffefe;
   text-align: center;
-  background-color: #ccc;
-  border: 1px solid #969191;
   padding: 8px;
-  border-radius: 4px;
-  transition: background-color 0.5s ease;
+  transition: border-bottom 0.5s ease;
+}
+
+.menu-label-active {
+  display: block;
+  margin-bottom: 5px;    
+  font-weight: bold;
+  font-size: 20px;
+  color: #fffefe;
+  text-align: center;
+  border-bottom: 1px solid #969191;
+  padding: 8px;
+  transition: border-bottom 0.5s ease;
   cursor: pointer;
 }
-.user-label:hover {
-  background-color: #ccc;
+.menu-label:hover {
+  border-bottom: 1px solid #969191;
   cursor: pointer;
 }
 </style>

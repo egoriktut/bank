@@ -51,8 +51,8 @@ const emit = defineEmits(['update:modelValue']);
 <style scoped>
 .base-input {
   width: 100%;
-  color: #969191;
-  border: 1px solid #757373;
+  color: #e2e6e7;
+  border: 1px solid #696969;
   border-radius: 4px;
   font-size: 16px;
   display: flex;
@@ -65,7 +65,7 @@ const emit = defineEmits(['update:modelValue']);
   border: none;
   padding: 8px;
   font-size: 16px;
-  background-color: #969191;
+  background-color: #e2e6e7;
   border-radius: 4px;
   outline: none;
 }

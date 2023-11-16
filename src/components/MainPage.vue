@@ -1,52 +1,40 @@
 <template>
-  <div v-if="data" class="user-info">
-    <div v-if="data[0]" class="user-info-header">
-      <div class="user-info-header">
-        <router-link to="/">
-          <VLabel @click="logoutUser" label="Выйти" type="user"/>
-        </router-link> 
-      </div>
+  <header class="vertical-header">
+    <!-- <img :src="'../../public/logo.png'" class="base-container" style="max-width: 250px;"> -->
+    <img :src="'./logo.png'" class="base-container" style="max-width: 250px;">
+    <div class="menu-block" v-if="props.user === 'MANAGER'">
+      <router-link to="/users" >
+        <VLabel label="Пользователи"  type="menu" @click="page = '/users'" :active="page === '/users' ? '-active': ''"/>
+      </router-link>
+      <router-link to="/points">
+        <VLabel label="Точки партнеров"  type="menu" @click="page = '/points'" :active="page === '/points' ? '-active': ''"/>
+      </router-link>
+      <router-link to="/tasks">
+        <VLabel label="Задачи"  type="menu" @click="page = '/tasks'" :active="page === '/tasks' ? '-active': ''"/>
+      </router-link>
     </div>
-    <VLabel :label="props.userName" />
-    <VLoad :progress="dataNow" :all="data.length"/>
-  </div>
-  <div v-else-if="props.user === 'MANAGER'" class="user-info">
-    <div class="user-info-header">
-      <div class="user-info-header">
-        <router-link to="/">
-          <VLabel @click="logoutUser" label="Выйти" type="user"/>
-        </router-link> 
-      </div>
-      <div class="user-info-header-group">
-        <router-link to="/users" >
-          <VLabel label="Пользователи"  type="user" @click="page = '/users'" :active="page === '/users' ? '-active': ''"/>
-        </router-link>
-        <router-link to="/points">
-          <VLabel label="Точки партнеров"  type="user" @click="page = '/points'" :active="page === '/points' ? '-active': ''"/>
-        </router-link>
-        <router-link to="/tasks">
-          <VLabel label="Задачи"  type="user" @click="page = '/tasks'" :active="page === '/tasks' ? '-active': ''"/>
-        </router-link>
-      </div>
+    <div class="menu-block">
+      <VLabel :label="userName" type="menu"/>
+      <router-link to="/">
+        <!-- <img :src="'../../public/logout.svg'" @click="logoutUser"> -->
+        <img :src="'./logout.svg'" @click="logoutUser">
+      </router-link> 
     </div>
-    <VLabel :label="userName" ></VLabel>
-    <Manager :current-page="page" />
-    <div style="margin-top: 25px; display: flex; justify-content: space-between;" >
-      <VLabel label="Судный день"  type="user" @click="reloadState"/>
-      <VLabel label="Следующий день"  type="user" @click="startBroot"/>
+  </header>
+  <div class="center-content-user">
+    <div v-if="data" class="user-info">
+      <VLoad :progress="dataNow" :all="data.length"/>
     </div>
-    
-  </div>
-  <div v-else-if="props.user === 'WORKER'" class="user-info">
-    <div class="user-info-header">
-      <div class="user-info-header">
-        <router-link to="/">
-          <VLabel @click="logoutUser" label="Выйти" type="user"/>
-        </router-link> 
-      </div>
+    <div v-else-if="props.user === 'MANAGER'" class="user-info">
+      <Manager :current-page="page" />
+      <div style="margin-top: 25px; display: flex; justify-content: space-between;" >
+        <VLabel label="Судный день"  type="user" @click="reloadState"/>
+        <VLabel label="Следующий день"  type="user" @click="startBroot"/>
+      </div>    
     </div>
-    <VLabel :label="userName" ></VLabel>
-    <Worker :current-page="page" />
+    <div v-else-if="props.user === 'WORKER'" class="user-info">
+      <Worker :current-page="page" />
+    </div>
   </div>
   <div id="map" style="opacity: 0;"></div>
 </template>
@@ -56,6 +44,7 @@ import Manager from './ManagerArea.vue';
 import Worker from './WorkerArae.vue';
 import VLabel from './base/VLabel.vue';
 import VLoad from './base/VLoad.vue';
+
 import { defineProps, defineEmits, ref } from "vue";
 import axios from "axios"
 
@@ -197,6 +186,27 @@ const props = defineProps({
 </script>
 
 <style>
+.vertical-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 100%;
+  background-color: #bec7cc;
+  /* position: relative; */
+}
+
+.menu-block{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .user-info {
   min-width: 100%;
   min-height: 60%;
@@ -204,7 +214,8 @@ const props = defineProps({
   padding: 20px;
   border: 5px;
   border-radius: 5px;
-  background-color: #3b3535;
+  margin-top: 100px;
+  background-color: #bec7cc;
 }
 
 .user-info-header {

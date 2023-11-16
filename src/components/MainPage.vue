@@ -1,7 +1,7 @@
 <template>
   <header class="vertical-header">
     <!-- <img :src="'../../public/logo.png'" class="base-container" style="max-width: 250px;"> -->
-    <img :src="'./logo.png'" class="base-container" style="max-width: 250px;">
+    <img :src="'./logo.svg'" class="base-container" style="max-width: 250px;">
     <div class="menu-block" v-if="props.user === 'MANAGER'">
       <router-link to="/users" >
         <VLabel label="Пользователи"  type="menu" @click="page = '/users'" :active="page === '/users' ? '-active': ''"/>
@@ -197,7 +197,7 @@ const props = defineProps({
   justify-content: space-between;
   padding: 20px;
   max-width: 100%;
-  background-color: #bec7cc;
+  background-color: rgba(59,130,246,.5);
   /* position: relative; */
 }
 
@@ -215,7 +215,8 @@ const props = defineProps({
   border: 5px;
   border-radius: 5px;
   margin-top: 100px;
-  background-color: #bec7cc;
+  /* border: solid 2px rgba(59,130,246,.5); */
+  background-color: #ffffff;
 }
 
 .user-info-header {

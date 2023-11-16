@@ -6,6 +6,7 @@
   <VTabel v-bind="tableData" @sort="sortTable" @open="openRow"/>
   <div v-if="showMap">
     <div id="map" style="height: 100%; width: 100%;"></div>
+    <textarea v-model="comment" placeholder="Комментарий по задаче"></textarea>
     <VLabel @click="compleateTask" label="Завершить задачу" type="user"/>
   </div>
   
@@ -23,7 +24,7 @@ const urlApi = 'http://185.171.194.122:8088'
 
 const userAddress = ref('')
 const searchInput = ref('');  
-
+const comment = ref('')
 const data = ref([]);
 const showMap = ref(true);
 
@@ -120,7 +121,7 @@ const compleateTask = () => {
   headers: {
     Authorization: localStorage.getItem('authenticated')
   }, 
-  data: {}
+  data: { comment: comment.value }
 }).then((response) => {
   location.reload()
   console.log(response)
@@ -169,5 +170,15 @@ watch([searchInput, data], () => {
   justify-content: flex-end;
   align-items: center;
 }
+
+textarea {
+    background: #ffffff; /* Цвет фона */
+    border: 1px solid ; /* Параметры рамки */
+    padding: 10px; /* Поля */
+    width: 100%; /* Ширина */
+    height: 150px; /* Высота */
+    box-sizing: border-box; /* Алгоритм расчёта ширины */
+    font-size: 14px; /* Размер шрифта */
+   }
 </style>
     

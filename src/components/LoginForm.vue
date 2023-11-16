@@ -8,7 +8,7 @@
     </div>
   <form @submit.prevent="submitForm" class="login-form">
     <!-- <img :src="'../../public/logo.png'" class="base-container"> -->
-    <img :src="'./logo.png'" class="base-container">
+    <img :src="'./logo.svg'" class="base-container">
     <div class="base-container">
       <VLabel 
         id="label-pass"
@@ -69,9 +69,9 @@ const submitForm = () => {
   min-width: 350px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #bec7cc;
+  /* border: 1px solid #a5adb1; */
   border-radius: 4px;
-  background-color: #bec7cc;
+  background-color: #ffffff;
   text-align: center;
 }
 .login-error {

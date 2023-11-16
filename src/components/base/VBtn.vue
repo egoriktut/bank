@@ -27,7 +27,7 @@ const props = defineProps({
 .base-button {
   width: 100%;
   padding: 12px;
-  background-color: #e2e6e7;
+  background-color: rgba(255 75 95); 
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -37,7 +37,7 @@ const props = defineProps({
 }
   
 .base-button:hover {
-  background-color: #bfdce4;
+  background-color: rgb(182, 52, 67);
   transition: ease 0.2s;
 }
 </style>

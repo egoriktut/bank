@@ -36,7 +36,7 @@ const props = defineProps({
   margin-bottom: 5px;    
   font-weight: bold;
   font-size: 14px;
-  color: #fffefe;
+  color: #000000;
   text-align: center;
 }
 
@@ -56,9 +56,11 @@ const props = defineProps({
   margin-bottom: 5px;    
   font-weight: bold;
   font-size: 14px;
-  color: #696969;
+  color: #ffffff;
   text-align: center;
-  background-color: #e2e6e7; 
+  /* background-color: rgba(59,130,246,.5);  */
+  background-color: rgba(255 75 95); 
+  
   /* border: 1px solid #696969; */
   padding: 8px;
   border-radius: 4px;
@@ -66,8 +68,9 @@ const props = defineProps({
 }
 
 .user-label:hover {
-  background-color: #bfdce4;
+  /* background-color: #bfdce4; */
   /* border-color: #bfdce4; */
+  background-color: rgb(182, 52, 67); 
   cursor: pointer;
 }
 
@@ -89,13 +92,13 @@ const props = defineProps({
   font-size: 20px;
   color: #fffefe;
   text-align: center;
-  border-bottom: 1px solid #969191;
+  border-bottom: 1px solid rgba(59,130,246,.5);
   padding: 8px;
   transition: border-bottom 0.5s ease;
   cursor: pointer;
 }
 .menu-label:hover {
-  border-bottom: 1px solid #969191;
+  border-bottom: 1px solid rgba(59,130,246,.5);
   cursor: pointer;
 }
 </style>

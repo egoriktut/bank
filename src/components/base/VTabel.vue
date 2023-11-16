@@ -133,18 +133,18 @@ const openRow = (row) => {
 }
 
 .table th {
-  background-color: #b7ccd1;
-  color: #696969;
+  background-color: rgb(15, 58, 140);
+  color: #ffffff;
   font-weight: bold;
 }
 
 .table-cell {
-  background-color: #e2e6e7;
+  background-color: #f3f1f1;
   transition: background-color 0.2s;
 }
 
 .table-cell:hover {
-  background-color: #a9abac;
+  background-color: rgba(59,130,246,.5);
   cursor: pointer;
 }
 

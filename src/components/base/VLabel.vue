@@ -35,8 +35,8 @@ const props = defineProps({
   align-items: center;
   margin-bottom: 5px;    
   font-weight: bold;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: 14px;
-  font-family: Roboto;
   color: #000000;
   text-align: center;
 }
@@ -46,7 +46,7 @@ const props = defineProps({
   font-size: 14px;
   color: #f53636;
   text-align: center;
-  font-family: Roboto;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   background-color: #cac7c7; 
   padding: 10px; 
   border: 1px solid #d88484; 
@@ -63,7 +63,7 @@ const props = defineProps({
   text-align: center;
   /* background-color: rgba(59,130,246,.5);  */
   background-color: rgba(255 75 95); 
-  
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   /* border: 1px solid #696969; */
   padding: 8px;
   border-radius: 4px;
@@ -81,7 +81,7 @@ const props = defineProps({
   display: block;
   margin-bottom: 5px;    
   font-weight: bold;
-  font-family: Roboto;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: 20px;
   color: #fffefe;
   text-align: center;
@@ -94,7 +94,7 @@ const props = defineProps({
   margin-bottom: 5px;    
   font-weight: bold;
   font-size: 20px;
-  font-family: Roboto;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   color: #fffefe;
   text-align: center;
   border-bottom: 1px solid rgba(59,130,246,.5);

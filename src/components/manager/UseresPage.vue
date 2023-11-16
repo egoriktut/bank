@@ -1,6 +1,7 @@
 <template>
   <div class="search-input">
     <VInput placeholder="Поиск" style="width: 17.7%" v-model="searchInput" />
+    <!-- <VInput placeholder="Поиск" style="width: 17.7%" v-model="searchInput" /> -->
   </div>
   <VTabel v-bind="tableData" @sort="sortTable" @delete="delRow" @open="openRow" />
 </template>

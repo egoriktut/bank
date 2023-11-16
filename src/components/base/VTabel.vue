@@ -129,7 +129,7 @@ const openRow = (row) => {
 .table th, .table td {
   border: none;
   padding: 8px;
-  font-family: Roboto;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   text-align: left;
 }
 
@@ -176,7 +176,7 @@ const openRow = (row) => {
 .pagination {
   display: flex;
   align-items: center;
-  font-family: Roboto;
+  font-family: Roboto,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   padding: auto;
 }
 

@@ -129,6 +129,7 @@ const openRow = (row) => {
 .table th, .table td {
   border: none;
   padding: 8px;
+  font-family: Roboto;
   text-align: left;
 }
 
@@ -168,12 +169,14 @@ const openRow = (row) => {
 .pagination-container-btn {
   display: flex;
   justify-content: flex-end;
+  /* font-family: Roboto; */
   align-items: center;
 }
 
 .pagination {
   display: flex;
   align-items: center;
+  font-family: Roboto;
   padding: auto;
 }
 
@@ -192,7 +195,7 @@ const openRow = (row) => {
 }
 
 .pagination-button:hover {
-  background-color: #bfdce4;
+  background-color: rgba(59,130,246,.5);
   cursor: pointer;
 }
 
@@ -203,7 +206,7 @@ const openRow = (row) => {
   font-size: 14px;
   color: #696969;
   text-align: center;
-  background-color: #a9abac; 
+  background-color: rgba(123, 171, 247, 0.5); 
   /* border: 1px solid #696969; */
   padding: 8px;
   border-radius: 4px;

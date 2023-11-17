@@ -94,8 +94,6 @@ import VBtn from '../base/VBtn.vue';
 import VModal from '../base/VModal.vue'
 import VLabel from '../base/VLabel.vue';
 import VState from '../base/VState.vue';
-import fs from 'fs'
-// import xlsx  from 'xlsx'
 
 const urlApi = 'http://185.171.194.122:8088'
 const showModaladd = ref(false)

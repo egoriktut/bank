@@ -1,4 +1,5 @@
 <template>
+  <VLabel :label="`Задач на сегодня распланировано ${plannedTaskConut}`"></VLabel>
   <div class="search-input">
     <VInput placeholder="Поиск" style="width: 17.7%;" v-model="searchInput"/>
   </div>
@@ -8,6 +9,7 @@
 <script setup>
 import VTabel from '../base/VTabel.vue';
 import VInput from '../base/VInput.vue';
+import VLabel from '../base/VLabel.vue';
 import { ref, watch } from 'vue';
 import axios from 'axios';
 
@@ -26,32 +28,60 @@ const openRow = (row) => {
 const searchInput = ref('');  
 
 const data = ref([]);
+const planned = ref([])
+const plannedTaskConut = ref(0)
 
 axios({
   method: 'get',
-  url: `${urlApi}/manage/get_tasks`,
+  url: `${urlApi}/manage/planned`,
   headers: {
     Authorization: localStorage.getItem('authenticated')
   }, 
   data: {}
 }).then((response) => {
   console.log(response.data)
-  data.value = response.data
-  data.value.forEach((item) => {
-    if (item.priority === 'HIGH') {
-      item.priority = 'Высокий'
-      item.name = 'Выезд на точку для стимулирования выдач'
-    } else if (item.priority === 'MEDIUM') {
-      item.priority = 'Средний'
-      item.name = 'Обучение агента'
-    } else {
-      item.priority = 'Низкий'
-      item.name = 'Доставка карт и материалов'
-    }
+  planned.value = response.data
+    axios({
+    method: 'get',
+    url: `${urlApi}/manage/get_tasks`,
+    headers: {
+      Authorization: localStorage.getItem('authenticated')
+    }, 
+    data: {}
+  }).then((response) => {
+    console.log(response.data)
+    data.value = response.data
+    data.value.forEach((item) => {
+      planned.value.forEach((plannedTask) => {
+        if (plannedTask.id === item.id){
+          item.status = 'PLANNED'
+          plannedTaskConut.value += 1
+        } 
+      })
+      if (item.status == 'CREATED'){
+        item.status = 'NEXT DAY'
+      }
+      if (item.priority === 'HIGH') {
+        item.priority = 'Высокий'
+        item.name = 'Выезд на точку для стимулирования выдач'
+      } else if (item.priority === 'MEDIUM') {
+        item.priority = 'Средний'
+        item.name = 'Обучение агента'
+      } else {
+        item.priority = 'Низкий'
+        item.name = 'Доставка карт и материалов'
+      }
+    });
+  }).catch((error) => {
+    console.log(error)
   });
 }).catch((error) => {
   console.log(error)
 });
+
+
+
+
   
 const headers = [
   {
@@ -72,6 +102,11 @@ const headers = [
   {
     label: 'Приоритет',
     key: 'priority',
+    sortDirection: 'asc',
+  },
+  {
+    label: 'Статус',
+    key: 'status',
     sortDirection: 'asc',
   },
 ]

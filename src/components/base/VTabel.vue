@@ -4,7 +4,7 @@
       <thead>
         <th v-for="header in headers" :key="header.key">
           <span
-            v-if="header.sortDirection === 'asc' && header.key !== 'del'"
+            v-if="header.sortDirection === 'asc' && header.key !== 'del' && header.key !== 'edit'"
             @click="sortData(header.key)"
           >
             {{ header.label }}

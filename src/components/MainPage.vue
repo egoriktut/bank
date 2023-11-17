@@ -188,6 +188,7 @@ const props = defineProps({
 <style>
 .vertical-header {
   position: fixed;
+  z-index: 10000;
   top: 0;
   left: 0;
   right: 0;

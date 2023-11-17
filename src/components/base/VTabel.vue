@@ -27,7 +27,11 @@
           <td v-for="header in headers" :key="header.key" >
             <div v-if="header.key === 'del'">
               <!-- <img :src="'../../../public/delete.svg'"> -->
-              <img :src="'./delete.svg'">
+              <img :src="'./delete.svg'" @click="del(item)">
+            </div>
+            <div v-if="header.key === 'edit'">
+              <!-- <img :src="'../../../public/delete.svg'"> -->
+              <img :src="'./edit.svg'" @click="edit(item)">
             </div>
             <div v-else @click="openRow(item)">
               {{ item[header.key] }}
@@ -66,7 +70,7 @@
 import VLabel from './VLabel.vue';
 import { ref, computed, defineEmits } from 'vue';
 
-const emits = defineEmits(['sort', 'delete', 'open'])
+const emits = defineEmits(['sort', 'delete', 'open', 'edit'])
 const props = defineProps({
   headers: {
     type: Array,
@@ -106,12 +110,16 @@ const sortData = (column) => {
   emits('sort', column);
 };
 
-// const del = (row) => {
-//   emits('delete', row)
-// }
+const del = (row) => {
+  emits('delete', row)
+}
 
 const openRow = (row) => {
   emits('open', row)
+}
+
+const edit = (row) => {
+  emits('edit', row)
 }
 
 </script>

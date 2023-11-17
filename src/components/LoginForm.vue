@@ -64,7 +64,7 @@ const submitForm = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .login-form {
   min-width: 350px;
   margin: 0 auto;
